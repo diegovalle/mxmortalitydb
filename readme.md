@@ -88,8 +88,7 @@ merge(df, aggressor.relation.code)
 ## 36                      70     2012     3           Otro familiar
 ## 37                      71     2012     1          Sin parentesco
 ## 38                      72     2012   438                 Ninguno
-## 39                      88     2012 47763               No aplica
-## 40                      99     2012 25250         No especificado
+## 39                      99     2012 25250         No especificado
 ```
 
 
