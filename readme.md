@@ -41,7 +41,7 @@ Homicides merged with the agressor.relation.code table:
 
 
 ```r
-df <- ddply(subset(injury.intent, intent = "Homicide"), .(year_reg, aggressor_relation_code), 
+df <- ddply(subset(injury.intent, intent == "Homicide"), .(year_reg, aggressor_relation_code), 
     summarise, count = length(state_reg))
 ## A couple of other tables are included in the package to interpret some of
 ## the values in injury.intent
