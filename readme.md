@@ -1,12 +1,13 @@
 Injury Intent Deaths 2004-2012 in Mexico
 ========================================================
 
-This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2012. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf)
+This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2012. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
 
 ## Installation
 
+devtools::install_github("diegovalle/mxmortalitydb")
 
-```r
+```s
 ## Uncomment the following lines to install install.packages('devtools')
 
 ## library(devtools)
@@ -16,7 +17,7 @@ This is a data only package containing all injury intent deaths (accidents, suic
 
 
 
-```r
+```s
 library(mxmortalitydb)
 library(ggplot2)
 library(plyr)
@@ -28,7 +29,7 @@ library(plyr)
 All deaths of unknown intent in Sinaloa (state code 25) where the injury mechanism was a firearm, by year of registration:
 
 
-```r
+```s
 ## The main data.frame in the package is called injury.intent
 ddply(subset(injury.intent, is.na(intent) & mechanism == "Firearm" & state_reg == 
     25), .(year_reg, intent), summarise, count = length(state_reg))
@@ -48,19 +49,19 @@ ddply(subset(injury.intent, is.na(intent) & mechanism == "Firearm" & state_reg =
 
 In addition to the injury.intent data.frame several other datasets are available:
 
-* aggressor.relation.code (relationship between the aggressor and his victim, useful for merging aggressor_relationship_code, Spanish)
-* geo.codes (names of states and municipios, useful for merging state_reg, state_occur_death and mun_reg, mun_occur_death codes)
-* icd.103 (list of 103 deceases by the WHO, Spanish)
-* metro.areas (2010 metro areas as defined by the CONAPO along with 2010 population counts)
-* big.municipios (since metro areas are not statistical in nature this is a list of all 
+* __aggressor.relation.code__ (relationship between the aggressor and his victim, useful for merging aggressor_relationship_code, Spanish)
+* __geo.codes__ (names of states and municipios, useful for merging state_reg, state_occur_death and mun_reg, mun_occur_death codes)
+* __icd.103__ (list of 103 deceases by the WHO, Spanish)
+* __metro.areas__ (2010 metro areas as defined by the CONAPO along with 2010 population counts)
+* __big.municipios__ (since metro areas are not statistical in nature this is a list of all 
   municipios which are bigger than the smallest metro area but are not part of one)
-* mex.list.group (groups of deceases, Spanish)
-* mex.list (list of deceases, Spanish)
+* __mex.list.group__ (groups of deceases, Spanish)
+* __mex.list__ (list of deceases, Spanish)
 
 Homicides merged with the aggressor.relation.code table:
 
 
-```r
+```s
 df <- ddply(subset(injury.intent, intent == "Homicide"), .(year_reg, aggressor_relation_code), 
     summarise, count = length(state_reg))
 ## A couple of other tables are included in the package to interpret some of
@@ -115,7 +116,7 @@ merge(df, aggressor.relation.code)
 A plot of female homicide counts (making sure to exclude those that occurred outside Mexico):
 
 
-```r
+```s
 ## make sure to only count deaths that occurred inside Mexico (codes 33 to 35
 ## are USA, LATAM and Other)
 df <- ddply(subset(injury.intent, sex == "Female" & intent == "Homicide" & !state_occur_death %in% 
@@ -130,7 +131,7 @@ ggplot(df, aes(year_reg, count)) + geom_line() + labs(title = "Female homicides 
 Homicides in the Mexico City metro area (ZM Valle de México), by state where the murder was registered
 
 
-```r
+```s
 plotMetro <- function(metro.name) {
     require(stringr)
     ## data.frame metro.areas contains the 2010 CONAPO metro areas
@@ -163,7 +164,7 @@ I encourage you to get acquainted with the database since it may contain some er
 Total Imputed Homicides in Mexico:
 
 
-```r
+```s
 ## make sure to only count deaths that occurred inside Mexico (codes 33 to 35
 ## are USA, LATAM and Other)
 ddply(subset(injury.intent, intent.imputed == "Homicide" & !state_occur_death %in% 
