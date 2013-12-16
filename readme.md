@@ -52,12 +52,12 @@ In addition to the __injury.intent__ data.frame several other datasets are avail
 
 * __aggressor.relation.code__ (relationship between the aggressor and his victim, useful for merging aggressor_relationship_code, Spanish)
 * __geo.codes__ (names of states and municipios, useful for merging state_reg, state_occur_death and mun_reg, mun_occur_death codes)
-* __icd.103__ (list of 103 deceases by the WHO, Spanish)
+* __icd.103__ (list of 103 categories in the WHO mortality, Spanish)
 * __metro.areas__ (2010 metro areas as defined by the CONAPO along with 2010 population counts)
 * __big.municipios__ (since metro areas are not statistical in nature this is a list of all 
   municipios which are bigger than the smallest metro area but are not part of one)
-* __mex.list.group__ (groups of deceases, Spanish)
-* __mex.list__ (list of deceases, Spanish)
+* __mex.list.group__ (groups of diseases, Spanish)
+* __mex.list__ (list of diseases, Spanish)
 
 Homicides merged with the aggressor.relation.code table:
 
