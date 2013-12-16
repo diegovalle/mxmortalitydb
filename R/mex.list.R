@@ -1,6 +1,6 @@
-#' Mexican Dicease List
+#' Mexican Disease List
 #'
-#' This dataset contains a deceases list to match with the injury mortality database variable mex_list
+#' This dataset contains a list of diseases to match with the injury mortality database variable mex_list
 #' \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 #'
 #' @section Variables:

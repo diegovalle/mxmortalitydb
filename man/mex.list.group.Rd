@@ -1,7 +1,7 @@
 \docType{data}
 \name{mex.list.group}
 \alias{mex.list.group}
-\title{Dicease Group corresponding to the Mexican Dicease List}
+\title{Dicease Group corresponding to the Mexican Disease List}
 \format{A data frame with 59 observations on the following 2 variables.}
 \description{
   This dataset contains a list of disease groups to match

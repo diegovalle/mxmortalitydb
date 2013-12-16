@@ -1,6 +1,6 @@
-#' Dicease Group corresponding to the Mexican Dicease List
+#' Dicease Group corresponding to the Mexican Disease List
 #'
-#' This dataset contains a list of decease groups to match with the injury mortality database
+#' This dataset contains a list of disease groups to match with the injury mortality database
 #' variable mex_list_group
 #' \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 #'

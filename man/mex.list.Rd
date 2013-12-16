@@ -1,11 +1,11 @@
 \docType{data}
 \name{mex.list}
 \alias{mex.list}
-\title{Mexican Dicease List}
+\title{Mexican Disease List}
 \format{A data frame with 417 observations on the following 2 variables.}
 \description{
-  This dataset contains a list of diseases to match with the
-  injury mortality database variable mex_list
+  This dataset contains a list of diseases to match with
+  the injury mortality database variable mex_list
   \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 }
 \section{Variables}{
