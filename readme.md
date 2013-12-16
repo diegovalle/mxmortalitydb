@@ -139,7 +139,7 @@ plotMetro <- function(metro.name) {
     df <- merge(injury.intent, metro.areas, by.x = c("state_reg", "mun_reg"), 
         by.y = c("state_code", "mun_code"))
     ## Homicides in Mexico City, by state of registration
-    df2 <- ddply(subset(df, metro_area == metro.name), .(state_reg, year_reg), 
+    df2 <- ddply(subset(df, metro_area == metro.name & intent == "Homicide"), .(state_reg, year_reg), 
         summarise, count = length(state_reg))
     ## data.frame geo.codes contains the names of Mexican states (with mun_code
     ## 0) and municipios
@@ -155,7 +155,7 @@ plotMetro("Valle de México")
 ## Loading required package: stringr
 ```
 
-![plot of chunk unnamed-chunk-6](http://i.imgur.com/QyVrua9.png) 
+![plot of chunk unnamed-chunk-6](http://i.imgur.com/72My7Th.png) 
 
 
 ## Warning
