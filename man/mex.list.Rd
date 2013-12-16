@@ -4,7 +4,7 @@
 \title{Mexican Dicease List}
 \format{A data frame with 417 observations on the following 2 variables.}
 \description{
-  This dataset contains a deceases list to match with the
+  This dataset contains a list of diseases to match with the
   injury mortality database variable mex_list
   \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 }
