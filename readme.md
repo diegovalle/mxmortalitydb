@@ -48,7 +48,7 @@ ddply(subset(injury.intent, is.na(intent) & mechanism == "Firearm" & state_reg =
 ```
 
 
-In addition to the injury.intent data.frame several other datasets are available:
+In addition to the __injury.intent__ data.frame several other datasets are available:
 
 * __aggressor.relation.code__ (relationship between the aggressor and his victim, useful for merging aggressor_relationship_code, Spanish)
 * __geo.codes__ (names of states and municipios, useful for merging state_reg, state_occur_death and mun_reg, mun_occur_death codes)
