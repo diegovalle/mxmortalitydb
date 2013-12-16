@@ -5,9 +5,12 @@ This is a data only package containing all injury intent deaths (accidents, suic
 
 ## Installation
 
+
 ```r
-## install.packages('devtools')
-library(devtools)
+## Uncomment the following lines to install install.packages('devtools')
+
+## library(devtools)
+
 ## install_github('mxmortalitydb', 'diegovalle')
 ```
 
@@ -42,6 +45,17 @@ ddply(subset(injury.intent, is.na(intent) & mechanism == "Firearm" & state_reg =
 ## 7     2012   <NA>   197
 ```
 
+
+In addition to the injury.intent data.frame several other datasets are available:
+
+* aggressor.relation.code (relationship between the aggressor and his victim, useful for merging aggressor_relationship_code, Spanish)
+* geo.codes (names of states and municipios, useful for merging state_reg, state_occur_death and mun_reg, mun_occur_death codes)
+* icd.103 (list of 103 deceases by the WHO, Spanish)
+* metro.areas (2010 metro areas as defined by the CONAPO along with 2010 population counts)
+* big.municipios (since metro areas are not statistical in nature this is a list of all 
+  municipios which are bigger than the smallest metro area but are not part of one)
+* mex.list.group (groups of deceases, Spanish)
+* mex.list (list of deceases, Spanish)
 
 Homicides merged with the aggressor.relation.code table:
 

@@ -2,7 +2,7 @@
 \name{injury.intent}
 \alias{injury.intent}
 \title{Mexican Injury Intent Mortality Data}
-\format{A data frame with 562,475 rows and 63 columns.}
+\format{A data frame with 562,475 rows and 66 columns.}
 \description{
   This dataset contains all injury intent deaths
   (accidents, suicides, homicides, legal interventions, and

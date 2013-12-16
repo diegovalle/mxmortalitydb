@@ -102,7 +102,7 @@
 #' @docType data
 #' @name injury.intent
 #' @usage injury.intent
-#' @format A data frame with 562,475 rows and 63 columns.
+#' @format A data frame with 562,475 rows and 66 columns.
 #' @examples
 #' head(injury.intent)
 NULL

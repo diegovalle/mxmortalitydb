@@ -1,6 +1,6 @@
 #' List of 103 Diceases
 #'
-#' This dataset contains a list of 103 diceases to match with the injury mortality dababse
+#' This dataset contains a list of 103 deceases to match with the injury mortality dababse
 #' variable icd_103
 #' \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 #'

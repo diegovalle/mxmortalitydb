@@ -4,7 +4,7 @@
 \title{List of 103 Diceases}
 \format{A data frame with 103 observations on the following 2 variables.}
 \description{
-  This dataset contains a list of 103 diceases to match
+  This dataset contains a list of 103 deceases to match
   with the injury mortality dababse variable icd_103
   \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 }
