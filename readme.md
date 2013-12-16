@@ -98,12 +98,14 @@ merge(df, aggressor.relation.code)
 ```
 
 
-A plot of female homicide counts:
+A plot of female homicide counts (making sure to exclude those that occurred outside Mexico):
 
 
 ```r
-df <- ddply(subset(injury.intent, sex == "Female" & intent == "Homicide"), .(year_reg, 
-    intent), summarise, count = length(state_reg))
+## make sure to only count deaths that occurred inside Mexico (codes 33 to 35
+## are USA, LATAM and Other)
+df <- ddply(subset(injury.intent, sex == "Female" & intent == "Homicide" & !state_occur_death %in% 
+    33:35), .(year_reg, intent), summarise, count = length(state_reg))
 ggplot(df, aes(year_reg, count)) + geom_line() + labs(title = "Female homicides in Mexico, by year of registration")
 ```
 
