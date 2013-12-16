@@ -8,7 +8,8 @@ This is a data only package containing all injury intent deaths (accidents, suic
 devtools::install_github("diegovalle/mxmortalitydb")
 
 ```s
-## Uncomment the following lines to install install.packages('devtools')
+## Uncomment the following lines to install 
+## install.packages('devtools')
 
 ## library(devtools)
 
