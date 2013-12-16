@@ -1,13 +1,19 @@
 Injury Intent Deaths 2004-2012 in Mexico
 ========================================================
 
-A data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2012. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [cdc](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf)
+This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2012. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf)
 
+## Installation
 
 ```r
 ## install.packages('devtools')
 library(devtools)
 ## install_github('mxmortalitydb', 'diegovalle')
+```
+
+
+
+```r
 library(mxmortalitydb)
 library(ggplot2)
 library(plyr)
@@ -37,7 +43,7 @@ ddply(subset(injury.intent, is.na(intent) & mechanism == "Firearm" & state_reg =
 ```
 
 
-Homicides merged with the agressor.relation.code table:
+Homicides merged with the aggressor.relation.code table:
 
 
 ```r
@@ -88,7 +94,7 @@ merge(df, aggressor.relation.code)
 ## 36                      70     2012     3           Otro familiar
 ## 37                      71     2012     1          Sin parentesco
 ## 38                      72     2012   438                 Ninguno
-## 39                      99     2012 25250         No especificado
+## 39                      99     2012 25253         No especificado
 ```
 
 
@@ -101,17 +107,51 @@ df <- ddply(subset(injury.intent, sex == "Female" & intent == "Homicide"), .(yea
 ggplot(df, aes(year_reg, count)) + geom_line() + labs(title = "Female homicides in Mexico, by year of registration")
 ```
 
-![plot of chunk unnamed-chunk-4](http://i.imgur.com/369LANr.png) 
+![plot of chunk unnamed-chunk-5](http://i.imgur.com/369LANr.png) 
+
+
+
+Homicides in the Mexico City metro area (ZM Valle de México), by state where the murder was registered
+
+
+```r
+plotMetro <- function(metro.name) {
+    require(stringr)
+    ## data.frame metro.areas contains the 2010 CONAPO metro areas
+    df <- merge(injury.intent, metro.areas, by.x = c("state_reg", "mun_reg"), 
+        by.y = c("state_code", "mun_code"))
+    ## Homicides in Mexico City, by state of registration
+    df2 <- ddply(subset(df, metro_area == metro.name), .(state_reg, year_reg), 
+        summarise, count = length(state_reg))
+    ## data.frame geo.codes contains the names of Mexican states (with mun_code
+    ## 0) and municipios
+    df2 <- merge(df2, subset(geo.codes, mun_code == 0), by.x = "state_reg", 
+        by.y = "state_code")
+    ggplot(df2, aes(year_reg, count, group = state_reg, color = name)) + geom_line() + 
+        labs(title = str_c("Homicides in ", metro.name, ", by state of registration"))
+}
+plotMetro("Valle de México")
+```
+
+```
+## Loading required package: stringr
+```
+
+![plot of chunk unnamed-chunk-6](http://i.imgur.com/QyVrua9.png) 
 
 
 ## Warning
 
-I encourage you to get acquainted with the database since it may contain some errors (from the source) and some fields may be difficult to interpret because of the large number of missing values (see above example). The field _intent.imputed_ is the result of running a statistical model to impute the intent of deaths of unknown intent and is mainly useful to the author of this package. Feel free to ignore the column.
+I encourage you to get acquainted with the database since it may contain some errors (introduced at the source) and some fields may be difficult to interpret because of the large number of missing values (see the aggressor relation example). The field _intent.imputed_ is the result of running a statistical model to impute the intent of deaths of unknown intent, and is mainly useful to the author of this package. Feel free to ignore the column.
+
+Total Imputed Homicides in Mexico:
 
 
 ```r
-ddply(subset(injury.intent, intent.imputed == "Homicide"), .(year_reg), summarise, 
-    count = length(state_reg))
+## make sure to only count deaths that occurred inside Mexico (codes 33 to 35
+## are USA, LATAM and Other)
+ddply(subset(injury.intent, intent.imputed == "Homicide" & !state_occur_death %in% 
+    33:35), .(year_reg), summarise, count = length(state_reg))
 ```
 
 ```
