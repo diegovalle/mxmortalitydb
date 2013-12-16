@@ -160,7 +160,7 @@ plotMetro("Valle de México")
 
 ## Warning
 
-I encourage you to get acquainted with the database since it may contain some errors (introduced at the source) and some fields may be difficult to interpret because of the large number of missing values (see the aggressor relation example). The field _intent.imputed_ is the result of running a statistical model to impute the intent of deaths of unknown intent, and is mainly useful to the author of this package. Feel free to ignore the column.
+I encourage you to get acquainted with the database since it may contain some errors (introduced at the source) and some fields may be difficult to interpret because of the large number of missing values (see the aggressor relation example). The field _intent.imputed_ is the result of running a statistical model to impute the intent of deaths of unknown intent, and correct some errors in the way homicides were recorded in Baja California, Sinaloa, and the Federal District. It is mainly useful to the author of this package. Feel free to ignore the column.
 
 Total Imputed Homicides in Mexico:
 
