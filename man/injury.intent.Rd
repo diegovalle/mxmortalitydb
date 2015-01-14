@@ -3,12 +3,15 @@
 \alias{injury.intent}
 \title{Mexican Injury Intent Mortality Data}
 \format{A data frame with 562,475 rows and 66 columns.}
+\usage{
+injury.intent
+}
 \description{
-  This dataset contains all injury intent deaths
-  (accidents, suicides, homicides, legal interventions, and
-  deaths of unspecified intent) registered by the SSA/INEGI
-  from 2004 to 2012
-  \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
+This dataset contains all injury intent deaths (accidents,
+suicides, homicides, legal interventions, and deaths of
+unspecified intent) registered by the SSA/INEGI from 2004
+to 2012
+\url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 }
 \section{Variables}{
   \itemize{ \item{\code{state_reg}}{: state where the death
@@ -211,5 +214,4 @@
 \examples{
 head(injury.intent)
 }
-\keyword{datasets}
 

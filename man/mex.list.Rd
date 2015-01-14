@@ -3,10 +3,13 @@
 \alias{mex.list}
 \title{Mexican Disease List}
 \format{A data frame with 417 observations on the following 2 variables.}
+\usage{
+mex.list
+}
 \description{
-  This dataset contains a list of diseases to match with
-  the injury mortality database variable mex_list
-  \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
+This dataset contains a list of diseases to match with the
+injury mortality database variable mex_list
+\url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 }
 \section{Variables}{
   \itemize{ \item{\code{mex_list}}{: a character vector}
@@ -15,5 +18,4 @@
 \examples{
 head(mex.list)
 }
-\keyword{datasets}
 

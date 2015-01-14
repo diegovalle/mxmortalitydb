@@ -1,7 +1,7 @@
-Mexican Injury Intent Deaths 2004-2012
+Mexican Injury Intent Deaths 2004-2013
 ========================================================
 
-This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2012. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
+This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2013. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
 
 ## Installation
 
@@ -20,8 +20,10 @@ devtools::install_github("diegovalle/mxmortalitydb")
 
 ```s
 library(mxmortalitydb)
-library(ggplot2)
+library(stringr)
 library(plyr)
+library(ggplot2)
+library(grid) ## needed for arrow
 ```
 
 
@@ -157,6 +159,77 @@ plotMetro("Valle de México")
 
 ![plot of chunk unnamed-chunk-6](http://i.imgur.com/72My7Th.png) 
 
+Since metro.area dataframe containes the 2010 population we can plot changes in homicides rates (the rate will be overstimated by a little bit since we are using 2010 data):
+
+```s
+plotChanges <- function(df, metro.areas, country.rate, years) {
+  ## Where the municipio where the death occurred is unknown use
+  ## the municipio where it was registered as place of occurrance
+  df[df$mun_occur_death==999, ]$mun_occur_death  <- 
+    df[df$mun_occur_death==999, ]$mun_reg
+  
+  ## Counts of homicide by state and municipio
+  df <- ddply(subset(df, year_reg %in% years & intent.imputed == "Homicide"), 
+              .(state_occur_death, mun_occur_death, year_reg), 
+              summarise, count = length(state_reg))
+  ## Merge the counts with our fake metro areas
+  df <- merge(df, metro.areas, by.x = c("state_occur_death", "mun_occur_death"), 
+              by.y = c("state_code", "mun_code"))
+  ## Now get the counts by metro area (which may contain more than one municipio)
+  df <- ddply(df, .(metro_area, year_reg), summarise,
+              count = sum(count), 
+              population = sum(mun_population_2010),
+              rate = count / population * 10^5)
+  ## We are only interesed if the metro area at some time had a homicide rate of 15
+  df <- subset(df, metro_area %in% subset(df, rate > 15)$metro_area)
+  ## Make sure the dataframe is ordered by metro and year
+  df <- df[order(df$metro_area, df$year_reg),]
+  ## Order the chart by homicide rate in 2012
+  df$metro_area <- reorder(df$metro_area, df$rate, function(x) x[[2]])
+  ## Data frame for the arrow structure
+  arrows <- ddply(df, .(metro_area), summarise, 
+                  start =  rate[1],
+                  end = rate[2],
+                  metro_area = metro_area[1],
+                  change = ifelse(rate[1] >= rate[2], "decrease" ,"increase"))
+  
+  ggplot(df,
+         aes(rate, metro_area, group = as.factor(year_reg), color = as.factor(year_reg))) +
+    geom_point(aes(size = log(count))) +
+    labs(title = "Homicide (and deaths of unknown intent classified as homicide) rates and trends") +
+    scale_size("number\nof\nhomicides", breaks = c(log(50),log(500),log(3000)),
+               labels = c(50, 500, 3000)) +
+    geom_segment(data = arrows, aes(x= start , y = metro_area, 
+                                    xend = end, yend = metro_area,
+                                    group = change, color = change), 
+                 arrow=arrow(length=unit(0.3,"cm")), alpha = .8) +
+    scale_color_manual("year\nand\ntrend", 
+                       values = c("gray", "black", "blue", "red")) +
+    ylab("metro area") +
+    xlab("homicide rate") +
+    scale_x_log10()+
+    geom_vline(xintercept = country.rate, linetype = 2) +
+    annotate("text",  y = "Tapachula", x = 26, label = "country\naverage",
+             hjust = -0.1, size = 4) +
+    theme_bw()
+}
+
+## Let's treat the big municipalities which are not part of a metro area
+## as if they were one
+## rename big.municipios to merge with metro.areas
+big.municipios2 <- big.municipios
+names(big.municipios2) <- c("state_code", "mun_code",
+                            "mun_population_2010", "metro_area")
+metro.areas.fake <- rbind.fill(metro.areas, big.municipios2)
+
+## Changes from 2011 to 2012 when the country homicide rate was 24.5
+plotChanges(injury.intent, metro.areas.fake, 24.5, c(2011,2012))
+## Changes from 2006 to 2012 when the country homicide rate was 24.5
+plotChanges(injury.intent, metro.areas.fake, 24.5, c(2011,2012))
+```
+
+![plot of chunk unnamed-chunk-6](http://i.imgur.com/72My7Th.png) 
+![plot of chunk unnamed-chunk-6](http://i.imgur.com/72My7Th.png) 
 
 ## Warning
 

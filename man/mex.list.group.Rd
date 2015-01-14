@@ -3,11 +3,13 @@
 \alias{mex.list.group}
 \title{Dicease Group corresponding to the Mexican Disease List}
 \format{A data frame with 59 observations on the following 2 variables.}
+\usage{
+mex.list.group
+}
 \description{
-  This dataset contains a list of disease groups to match
-  with the injury mortality database variable
-  mex_list_group
-  \url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
+This dataset contains a list of disease groups to match
+with the injury mortality database variable mex_list_group
+\url{http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx}
 }
 \section{Variables}{
   \itemize{ \item{\code{mex_list_group}}{: a character
@@ -17,5 +19,4 @@
 \examples{
 head(mex.list.group)
 }
-\keyword{datasets}
 

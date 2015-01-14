@@ -3,10 +3,13 @@
 \alias{metro.areas}
 \title{Mexican Metro Areas (2010)}
 \format{A data frame with 366 observations on the following 5 variables.}
+\usage{
+metro.areas
+}
 \description{
-  This dataset contains all municipios which are part of a
-  metro area as defined by the CONAPO
-  \url{http://www.conapo.gob.mx/es/CONAPO/Delimitacion_de_Zonas_Metropolitanas}
+This dataset contains all municipios which are part of a
+metro area as defined by the CONAPO
+\url{http://www.conapo.gob.mx/es/CONAPO/Delimitacion_de_Zonas_Metropolitanas}
 }
 \section{Variables}{
   \itemize{ \item{\code{metro_area}}{a character vector}
@@ -20,5 +23,4 @@
 \examples{
 head(metro.areas)
 }
-\keyword{datasets}
 
