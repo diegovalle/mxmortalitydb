@@ -1,4 +1,5 @@
 [![Travis-CI Build Status](https://travis-ci.org/diegovalle/mxmortalitydb.svg?branch=master)](https://travis-ci.org/diegovalle/mxmortalitydb)
+
 Mexican Injury Intent Deaths 2004-2014
 ========================================================
 
