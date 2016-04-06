@@ -18,7 +18,7 @@
 
 #' \item{\code{state_occur_death}}{: state where the death occurred}
 #' \item{\code{mun_occur_death}}{: municipio where the death occurred}
-#' \item{\code{mun_occur_death2}}{: municipio where the death occurred with Tulum coded as if it were Solidaridad, Bacalar as Othón P. Blanco, and San Ignacio Cerro Gordo as Arandas}
+#' \item{\code{mun_occur_death2}}{: municipio where the death occurred with Tulum coded as if it were Solidaridad, Bacalar as Othon P. Blanco, and San Ignacio Cerro Gordo as Arandas}
 #' \item{\code{loc_occur}}{: localidad where the death occurred}
 #' \item{\code{loc_occur_death_size}}{:  size of the locality where the death occurred, with levels \code{1-999}, \code{1000-1999}, \code{2000-2999}, \code{3000-4999}, \code{5000-9999}, \code{10000-14999}, \code{15000-19999}, \code{20000-29999}, \code{30000-39999}, \code{40000-49999}, \code{50000-74999}, \code{75000-99999}, \code{100000-249999}, \code{250000-499999}, \code{500000-999999}, \code{1000000-1499999}, \code{>1500000}}
 
@@ -34,7 +34,7 @@
 #' \item{\code{icd_group}}{: ICD-10 group}
 #' \item{\code{icd_list_103}}{: List of 103 diseases}
 #' \item{\code{mex_list}}{: code corresponding to the Mexican Disease List}
-#' \item{\code{mex_list)group}}{: group corresponding to the Mexican Disease List}
+#' \item{\code{mex_list_group}}{: group corresponding to the Mexican Disease List}
 
 #' \item{\code{sex}}{: sex of the deceased, with levels \code{Female}, \code{Male}}
 
