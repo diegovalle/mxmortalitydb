@@ -5,10 +5,18 @@ Version: 0.2
 Date: 2015-01-15
 Author: Diego Valle-Jones <diegovalle@gmail.com>
 Maintainer: Diego Valle-Jones <diegovalle@gmail.com>
-Description: A data only package containing all injury intent deaths 
-             (accidents, suicides, homicides, legal interventions, 
-             and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2013
+Description: A data only package containing all injury intent deaths (accidents,
+    suicides, homicides, legal interventions, and deaths of unspecified intent)
+    registered by the SSA/INEGI from 2004 to 2015. See <http://www.inegi.org.mx/est/contenidos/proyectos/accesomicrodatos/registros/vitales/mortalidad/> for the original
+    microdata.
 License: CC0
 Depends:
     R (>= 2.10)
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat,
+    ggplot2,
+    plyr
 LazyData: true
+RoxygenNote: 5.0.0
