@@ -1,6 +1,6 @@
 library(testthat)
 library(mxmortalitydb)
-library(plyr)
+library(dplyr)
 
 test_check("testthat")
 

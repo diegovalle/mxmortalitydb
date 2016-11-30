@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+readme.md
+readme.Rmd
+readme.html
+readme_files
+figure*
+.gitignore
+^\.travis\.yml$
+^cran-comments\.md$
+readme_files
