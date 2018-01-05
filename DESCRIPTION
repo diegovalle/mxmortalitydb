@@ -1,7 +1,7 @@
 Package: mxmortalitydb
 Type: Package
 Title: Injury Intent Deaths 2004-2016 in Mexico
-Version: 2016
+Version: 2016.0
 Date: 2018-01-05
 Author: Diego Valle-Jones <diegovalle@gmail.com>
 Maintainer: Diego Valle-Jones <diegovalle@gmail.com>
