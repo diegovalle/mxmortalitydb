@@ -1,13 +1,13 @@
 Package: mxmortalitydb
 Type: Package
-Title: Injury Intent Deaths 2004-2014 in Mexico
-Version: 0.2
-Date: 2015-01-15
+Title: Injury Intent Deaths 2004-2016 in Mexico
+Version: 2016
+Date: 2018-01-05
 Author: Diego Valle-Jones <diegovalle@gmail.com>
 Maintainer: Diego Valle-Jones <diegovalle@gmail.com>
 Description: A data only package containing all injury intent deaths (accidents,
     suicides, homicides, legal interventions, and deaths of unspecified intent)
-    registered by the SSA/INEGI from 2004 to 2014. See <http://www.inegi.org.mx/
+    registered by the SSA/INEGI from 2004 to 2016. See <http://www.inegi.org.mx/
     est/contenidos/proyectos/accesomicrodatos/registros/vitales/mortalidad/> for the
     original microdata.
 License: MIT + file LICENSE
@@ -20,4 +20,4 @@ Suggests:
     ggplot2,
     dplyr
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

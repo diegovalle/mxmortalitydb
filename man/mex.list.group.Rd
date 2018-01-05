@@ -21,7 +21,7 @@ variable mex_list_group
 \item{\code{mex_list_group_name}}{: a character vector}
 }
 }
+
 \examples{
 head(mex.list.group)
 }
-

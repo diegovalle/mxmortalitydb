@@ -92,7 +92,7 @@ not specified, 1098 hours not specified, 2001 to 2029 means days, 2098 days not 
 \item{\code{intent.imputed}}{: result of a statistical model to classify deaths of unknown intent and recode legal interventions as homicides, with levels \code{Accident}, \code{Homicide}, \code{Suicide}}
 }
 }
+
 \examples{
 head(injury.intent)
 }
-

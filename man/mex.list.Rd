@@ -20,7 +20,7 @@ This dataset contains a list of diseases to match with the injury mortality data
 \item{\code{mex_list_name}}{: a character vector}
 }
 }
+
 \examples{
 head(mex.list)
 }
-

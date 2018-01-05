@@ -23,7 +23,7 @@ a larger population than the smallest metro area (> 110,000)
 \item{\code{name}}{a character vector}
 }
 }
+
 \examples{
 head(big.municipios)
 }
-

@@ -21,7 +21,7 @@ and their victim for the aggressor_relation_code column in the injury intent dat
 \item{\code{relationship}}{a character vector}
 }
 }
+
 \examples{
 head(aggressor.relation.code)
 }
-

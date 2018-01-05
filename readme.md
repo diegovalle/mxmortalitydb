@@ -1,45 +1,30 @@
-Injury Intent Deaths 2004-2015 in Mexico
+Injury Intent Deaths 2004-2016 in Mexico
 ================
 Diego Valle-Jones
-November 30, 2016
+January 05, 2018
 
--   [Injury Intent Deaths 2004-2015 in Mexico](#injury-intent-deaths-2004-2015-in-mexico)
+-   [Injury Intent Deaths 2004-2016 in Mexico](#injury-intent-deaths-2004-2016-in-mexico)
     -   [What does it do?](#what-does-it-do)
     -   [Installation](#installation)
     -   [Examples](#examples)
     -   [Warning](#warning)
     -   [License](#license)
 
-Injury Intent Deaths 2004-2015 in Mexico
+Injury Intent Deaths 2004-2016 in Mexico
 ========================================
 
 [![Travis-CI Build Status](https://travis-ci.org/diegovalle/mxmortalitydb.svg?branch=master)](https://travis-ci.org/diegovalle/mxmortalitydb)
 
-<table style="width:43%;">
-<colgroup>
-<col width="20%" />
-<col width="22%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><strong>Author:</strong></td>
-<td align="left">Diego Valle-Jones</td>
-</tr>
-<tr class="even">
-<td align="left"><strong>License:</strong></td>
-<td align="left"><a href="http://en.wikipedia.org/wiki/MIT_License">MIT</a></td>
-</tr>
-<tr class="odd">
-<td align="left"><strong>Website:</strong></td>
-<td align="left"><a href="https://github.com/diegovalle/mxmortalitydb" class="uri">https://github.com/diegovalle/mxmortalitydb</a></td>
-</tr>
-</tbody>
-</table>
+|              |                                                 |
+|--------------|-------------------------------------------------|
+| **Author:**  | Diego Valle-Jones                               |
+| **License:** | [MIT](http://en.wikipedia.org/wiki/MIT_License) |
+| **Website:** | <https://github.com/diegovalle/mxmortalitydb>   |
 
 What does it do?
 ----------------
 
-This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2015. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
+This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2016. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
 
 Installation
 ------------
@@ -85,21 +70,21 @@ injury.intent %>%
   summarise(count = n())
 ```
 
-    ## Source: local data frame [10 x 3]
-    ## Groups: year_reg [?]
-    ## 
+    ## # A tibble: 11 x 3
+    ## # Groups:   year_reg [?]
     ##    year_reg intent count
     ##       <int> <fctr> <int>
-    ## 1      2004     NA    11
-    ## 2      2005     NA    11
-    ## 3      2006     NA     2
-    ## 4      2009     NA     8
-    ## 5      2010     NA     7
-    ## 6      2011     NA    25
-    ## 7      2012     NA   197
-    ## 8      2013     NA     8
-    ## 9      2014     NA     1
-    ## 10     2015     NA     1
+    ##  1     2004   <NA>    11
+    ##  2     2005   <NA>    11
+    ##  3     2006   <NA>     2
+    ##  4     2009   <NA>     8
+    ##  5     2010   <NA>     7
+    ##  6     2011   <NA>    25
+    ##  7     2012   <NA>   197
+    ##  8     2013   <NA>     8
+    ##  9     2014   <NA>     1
+    ## 10     2015   <NA>     1
+    ## 11     2016   <NA>     3
 
 In addition to the injury.intent data.frame several other datasets are available:
 
@@ -126,148 +111,183 @@ merge(df, aggressor.relation.code)
     ##     aggressor_relation_code year_reg count            relationship
     ## 1                         1     2012    25                   Padre
     ## 2                         1     2015     7                   Padre
-    ## 3                         1     2014   107                   Padre
-    ## 4                         1     2013    18                   Padre
-    ## 5                         2     2015    11                   Madre
-    ## 6                         2     2014    16                   Madre
-    ## 7                         2     2013    17                   Madre
-    ## 8                         2     2012    64                   Madre
-    ## 9                         3     2015     9                 Hermano
-    ## 10                        3     2014    13                 Hermano
-    ## 11                        3     2013    16                 Hermano
-    ## 12                        3     2012    14                 Hermano
-    ## 13                        4     2015     2                 Hermana
-    ## 14                        4     2014     9                 Hermana
-    ## 15                        4     2013     6                 Hermana
-    ## 16                        4     2012     7                 Hermana
-    ## 17                        5     2012    10                    Hijo
-    ## 18                        5     2013    14                    Hijo
-    ## 19                        5     2015    10                    Hijo
-    ## 20                        5     2014    20                    Hijo
-    ## 21                        6     2012     1                    Hija
-    ## 22                        6     2015     1                    Hija
-    ## 23                        6     2014     2                    Hija
-    ## 24                        6     2013     2                    Hija
-    ## 25                        7     2015     1                  Abuelo
-    ## 26                        7     2014     2                  Abuelo
-    ## 27                        7     2013     4                  Abuelo
-    ## 28                        7     2012     5                  Abuelo
-    ## 29                        8     2014     8                  Abuela
-    ## 30                        8     2013     5                  Abuela
-    ## 31                        8     2012     3                  Abuela
-    ## 32                        9     2015     3                   Nieto
-    ## 33                        9     2013    29                   Nieto
-    ## 34                        9     2012     5                   Nieto
-    ## 35                        9     2014    19                   Nieto
-    ## 36                       10     2012     1                   Nieta
-    ## 37                       10     2013     2                   Nieta
-    ## 38                       10     2014     1                   Nieta
-    ## 39                       11     2014    22         Esposo, Cónyuge
-    ## 40                       11     2012    27         Esposo, Cónyuge
-    ## 41                       11     2015    30         Esposo, Cónyuge
-    ## 42                       11     2013    29         Esposo, Cónyuge
-    ## 43                       12     2014    10         Esposa, Cónyuge
-    ## 44                       12     2015     2         Esposa, Cónyuge
-    ## 45                       12     2013     9         Esposa, Cónyuge
-    ## 46                       12     2012     3         Esposa, Cónyuge
-    ## 47                       13     2015     8                     Tío
-    ## 48                       13     2014     6                     Tío
-    ## 49                       13     2013     9                     Tío
-    ## 50                       13     2012     7                     Tío
-    ## 51                       14     2012     1                     Tía
-    ## 52                       15     2012    19                 Sobrino
-    ## 53                       15     2013    14                 Sobrino
-    ## 54                       15     2015     9                 Sobrino
-    ## 55                       15     2014    10                 Sobrino
-    ## 56                       17     2014    10                   Primo
-    ## 57                       17     2013    15                   Primo
-    ## 58                       17     2012    14                   Primo
-    ## 59                       17     2015    11                   Primo
-    ## 60                       21     2012     1                Bisnieto
-    ## 61                       27     2012     2                  Suegro
-    ## 62                       27     2015     2                  Suegro
-    ## 63                       27     2013     1                  Suegro
-    ## 64                       31     2015     4                   Yerno
-    ## 65                       31     2014     1                   Yerno
-    ## 66                       31     2012     4                   Yerno
-    ## 67                       31     2013     5                   Yerno
-    ## 68                       33     2015     9                  Cuñado
-    ## 69                       33     2014     9                  Cuñado
-    ## 70                       33     2013     8                  Cuñado
-    ## 71                       33     2012     9                  Cuñado
-    ## 72                       34     2012     1                  Cuñada
-    ## 73                       35     2014     2                 Concuño
-    ## 74                       35     2012     1                 Concuño
-    ## 75                       35     2013     1                 Concuño
-    ## 76                       37     2012     6               Padrastro
-    ## 77                       37     2014     2               Padrastro
-    ## 78                       37     2015     6               Padrastro
-    ## 79                       37     2013     7               Padrastro
-    ## 80                       38     2013     1               Madrastra
-    ## 81                       39     2014     1                Hijastro
-    ## 82                       39     2013     2                Hijastro
-    ## 83                       39     2015     2                Hijastro
-    ## 84                       39     2012     2                Hijastro
-    ## 85                       41     2012     1             Hermanastro
-    ## 86                       41     2014     1             Hermanastro
-    ## 87                       41     2013     3             Hermanastro
-    ## 88                       45     2012     9    Concubino, compañero
-    ## 89                       45     2015    28    Concubino, compañero
-    ## 90                       45     2013    27    Concubino, compañero
-    ## 91                       45     2014    26    Concubino, compañero
-    ## 92                       46     2015     5    Concubina, compañera
-    ## 93                       46     2012     4    Concubina, compañera
-    ## 94                       46     2014     7    Concubina, compañera
-    ## 95                       46     2013     4    Concubina, compañera
-    ## 96                       47     2012     3 Amante, Amasio, Querido
-    ## 97                       47     2013     1 Amante, Amasio, Querido
-    ## 98                       47     2015     1 Amante, Amasio, Querido
-    ## 99                       48     2014     1 Amante, Amasia, Querida
-    ## 100                      49     2014     2                   Novio
-    ## 101                      49     2015     2                   Novio
-    ## 102                      49     2013     3                   Novio
-    ## 103                      49     2012     2                   Novio
-    ## 104                      51     2015     3               Ex esposo
-    ## 105                      51     2012     3               Ex esposo
-    ## 106                      51     2014     5               Ex esposo
-    ## 107                      51     2013     2               Ex esposo
-    ## 108                      53     2015     1                 Padrino
-    ## 109                      55     2014     1                 Ahijado
-    ## 110                      57     2012     1                Compadre
-    ## 111                      57     2014     1                Compadre
-    ## 112                      57     2015     1                Compadre
-    ## 113                      61     2013     1    Trabajador doméstico
-    ## 114                      66     2012     5                Conocido
-    ## 115                      66     2014     4                Conocido
-    ## 116                      66     2015     6                Conocido
-    ## 117                      66     2013     6                Conocido
-    ## 118                      67     2012     5                  Vecino
-    ## 119                      67     2014     4                  Vecino
-    ## 120                      67     2015     5                  Vecino
-    ## 121                      67     2013     3                  Vecino
-    ## 122                      68     2014     1                   Amigo
-    ## 123                      68     2013     4                   Amigo
-    ## 124                      68     2012     6                   Amigo
-    ## 125                      68     2015     2                   Amigo
-    ## 126                      69     2012     1                   Amiga
-    ## 127                      69     2013     1                   Amiga
-    ## 128                      70     2014     7           Otro familiar
-    ## 129                      70     2015     1           Otro familiar
-    ## 130                      70     2012     3           Otro familiar
-    ## 131                      71     2015    12          Sin parentesco
-    ## 132                      71     2013     5          Sin parentesco
-    ## 133                      71     2012     1          Sin parentesco
-    ## 134                      71     2014     7          Sin parentesco
-    ## 135                      72     2013   358                 Ninguno
-    ## 136                      72     2015   339                 Ninguno
-    ## 137                      72     2012   438                 Ninguno
-    ## 138                      72     2014   324                 Ninguno
-    ## 139                      88     2015    25               No aplica
-    ## 140                      88     2014     3               No aplica
-    ## 141                      99     2012 25253         No especificado
-    ## 142                      99     2015 20205         No especificado
-    ## 143                      99     2014 19349         No especificado
-    ## 144                      99     2013 22431         No especificado
+    ## 3                         1     2016    13                   Padre
+    ## 4                         1     2014   107                   Padre
+    ## 5                         1     2013    18                   Padre
+    ## 6                         2     2015    11                   Madre
+    ## 7                         2     2016     9                   Madre
+    ## 8                         2     2014    16                   Madre
+    ## 9                         2     2013    17                   Madre
+    ## 10                        2     2012    64                   Madre
+    ## 11                        3     2015     9                 Hermano
+    ## 12                        3     2014    13                 Hermano
+    ## 13                        3     2013    16                 Hermano
+    ## 14                        3     2012    14                 Hermano
+    ## 15                        3     2016    11                 Hermano
+    ## 16                        4     2015     2                 Hermana
+    ## 17                        4     2012     7                 Hermana
+    ## 18                        4     2013     6                 Hermana
+    ## 19                        4     2014     9                 Hermana
+    ## 20                        4     2016     4                 Hermana
+    ## 21                        5     2012    10                    Hijo
+    ## 22                        5     2013    14                    Hijo
+    ## 23                        5     2015    10                    Hijo
+    ## 24                        5     2016    13                    Hijo
+    ## 25                        5     2014    20                    Hijo
+    ## 26                        6     2012     1                    Hija
+    ## 27                        6     2016     3                    Hija
+    ## 28                        6     2013     2                    Hija
+    ## 29                        6     2015     1                    Hija
+    ## 30                        6     2014     2                    Hija
+    ## 31                        7     2016     1                  Abuelo
+    ## 32                        7     2015     1                  Abuelo
+    ## 33                        7     2012     5                  Abuelo
+    ## 34                        7     2013     4                  Abuelo
+    ## 35                        7     2014     2                  Abuelo
+    ## 36                        8     2014     8                  Abuela
+    ## 37                        8     2012     3                  Abuela
+    ## 38                        8     2013     5                  Abuela
+    ## 39                        8     2016     1                  Abuela
+    ## 40                        9     2013    29                   Nieto
+    ## 41                        9     2015     3                   Nieto
+    ## 42                        9     2014    19                   Nieto
+    ## 43                        9     2016     4                   Nieto
+    ## 44                        9     2012     5                   Nieto
+    ## 45                       10     2013     2                   Nieta
+    ## 46                       10     2012     1                   Nieta
+    ## 47                       10     2014     1                   Nieta
+    ## 48                       11     2012    27         Esposo, Cónyuge
+    ## 49                       11     2016    24         Esposo, Cónyuge
+    ## 50                       11     2013    29         Esposo, Cónyuge
+    ## 51                       11     2014    22         Esposo, Cónyuge
+    ## 52                       11     2015    30         Esposo, Cónyuge
+    ## 53                       12     2016     4         Esposa, Cónyuge
+    ## 54                       12     2014    10         Esposa, Cónyuge
+    ## 55                       12     2015     2         Esposa, Cónyuge
+    ## 56                       12     2012     3         Esposa, Cónyuge
+    ## 57                       12     2013     9         Esposa, Cónyuge
+    ## 58                       13     2014     6                     Tío
+    ## 59                       13     2015     8                     Tío
+    ## 60                       13     2013     9                     Tío
+    ## 61                       13     2012     7                     Tío
+    ## 62                       13     2016    13                     Tío
+    ## 63                       14     2012     1                     Tía
+    ## 64                       15     2012    19                 Sobrino
+    ## 65                       15     2015     9                 Sobrino
+    ## 66                       15     2014    10                 Sobrino
+    ## 67                       15     2013    14                 Sobrino
+    ## 68                       15     2016     4                 Sobrino
+    ## 69                       16     2016     1                 Sobrina
+    ## 70                       17     2013    15                   Primo
+    ## 71                       17     2012    14                   Primo
+    ## 72                       17     2015    11                   Primo
+    ## 73                       17     2014    10                   Primo
+    ## 74                       17     2016     9                   Primo
+    ## 75                       18     2016     1                   Prima
+    ## 76                       21     2012     1                Bisnieto
+    ## 77                       27     2016     1                  Suegro
+    ## 78                       27     2015     2                  Suegro
+    ## 79                       27     2012     2                  Suegro
+    ## 80                       27     2013     1                  Suegro
+    ## 81                       31     2012     4                   Yerno
+    ## 82                       31     2014     1                   Yerno
+    ## 83                       31     2016     3                   Yerno
+    ## 84                       31     2015     4                   Yerno
+    ## 85                       31     2013     5                   Yerno
+    ## 86                       33     2015     9                  Cuñado
+    ## 87                       33     2013     8                  Cuñado
+    ## 88                       33     2012     9                  Cuñado
+    ## 89                       33     2014     9                  Cuñado
+    ## 90                       33     2016     3                  Cuñado
+    ## 91                       34     2012     1                  Cuñada
+    ## 92                       35     2014     2                 Concuño
+    ## 93                       35     2012     1                 Concuño
+    ## 94                       35     2013     1                 Concuño
+    ## 95                       37     2015     6               Padrastro
+    ## 96                       37     2012     6               Padrastro
+    ## 97                       37     2016     6               Padrastro
+    ## 98                       37     2014     2               Padrastro
+    ## 99                       37     2013     7               Padrastro
+    ## 100                      38     2013     1               Madrastra
+    ## 101                      39     2013     2                Hijastro
+    ## 102                      39     2012     2                Hijastro
+    ## 103                      39     2016     1                Hijastro
+    ## 104                      39     2014     1                Hijastro
+    ## 105                      39     2015     2                Hijastro
+    ## 106                      41     2012     1             Hermanastro
+    ## 107                      41     2013     3             Hermanastro
+    ## 108                      41     2014     1             Hermanastro
+    ## 109                      45     2013    27    Concubino, compañero
+    ## 110                      45     2012     9    Concubino, compañero
+    ## 111                      45     2014    26    Concubino, compañero
+    ## 112                      45     2016    25    Concubino, compañero
+    ## 113                      45     2015    28    Concubino, compañero
+    ## 114                      46     2013     4    Concubina, compañera
+    ## 115                      46     2016     6    Concubina, compañera
+    ## 116                      46     2014     7    Concubina, compañera
+    ## 117                      46     2012     4    Concubina, compañera
+    ## 118                      46     2015     5    Concubina, compañera
+    ## 119                      47     2012     3 Amante, Amasio, Querido
+    ## 120                      47     2013     1 Amante, Amasio, Querido
+    ## 121                      47     2015     1 Amante, Amasio, Querido
+    ## 122                      47     2016     2 Amante, Amasio, Querido
+    ## 123                      48     2014     1 Amante, Amasia, Querida
+    ## 124                      49     2012     2                   Novio
+    ## 125                      49     2014     2                   Novio
+    ## 126                      49     2016     4                   Novio
+    ## 127                      49     2015     2                   Novio
+    ## 128                      49     2013     3                   Novio
+    ## 129                      51     2014     5               Ex esposo
+    ## 130                      51     2015     3               Ex esposo
+    ## 131                      51     2012     3               Ex esposo
+    ## 132                      51     2016     4               Ex esposo
+    ## 133                      51     2013     2               Ex esposo
+    ## 134                      52     2016     2               Ex esposa
+    ## 135                      53     2015     1                 Padrino
+    ## 136                      55     2014     1                 Ahijado
+    ## 137                      57     2014     1                Compadre
+    ## 138                      57     2012     1                Compadre
+    ## 139                      57     2015     1                Compadre
+    ## 140                      61     2013     1    Trabajador doméstico
+    ## 141                      66     2012     5                Conocido
+    ## 142                      66     2016    15                Conocido
+    ## 143                      66     2013     6                Conocido
+    ## 144                      66     2015     6                Conocido
+    ## 145                      66     2014     4                Conocido
+    ## 146                      67     2012     5                  Vecino
+    ## 147                      67     2014     4                  Vecino
+    ## 148                      67     2016     5                  Vecino
+    ## 149                      67     2013     3                  Vecino
+    ## 150                      67     2015     5                  Vecino
+    ## 151                      68     2012     6                   Amigo
+    ## 152                      68     2016     5                   Amigo
+    ## 153                      68     2015     2                   Amigo
+    ## 154                      68     2014     1                   Amigo
+    ## 155                      68     2013     4                   Amigo
+    ## 156                      69     2012     1                   Amiga
+    ## 157                      69     2013     1                   Amiga
+    ## 158                      70     2015     1           Otro familiar
+    ## 159                      70     2016     3           Otro familiar
+    ## 160                      70     2012     3           Otro familiar
+    ## 161                      70     2014     7           Otro familiar
+    ## 162                      71     2015    12          Sin parentesco
+    ## 163                      71     2012     1          Sin parentesco
+    ## 164                      71     2013     5          Sin parentesco
+    ## 165                      71     2016    19          Sin parentesco
+    ## 166                      71     2014     7          Sin parentesco
+    ## 167                      72     2015   339                 Ninguno
+    ## 168                      72     2014   324                 Ninguno
+    ## 169                      72     2012   438                 Ninguno
+    ## 170                      72     2013   358                 Ninguno
+    ## 171                      72     2016   405                 Ninguno
+    ## 172                      88     2015    25               No aplica
+    ## 173                      88     2016     2               No aplica
+    ## 174                      88     2014     3               No aplica
+    ## 175                      99     2015 20205         No especificado
+    ## 176                      99     2016 23934         No especificado
+    ## 177                      99     2013 22431         No especificado
+    ## 178                      99     2012 25253         No especificado
+    ## 179                      99     2014 19349         No especificado
 
 A plot of female homicide counts (making sure to exclude those that occurred outside Mexico):
 
@@ -359,21 +379,22 @@ injury.intent %>%
   summarise(count = n())
 ```
 
-    ## # A tibble: 12 × 2
+    ## # A tibble: 13 x 2
     ##    year_reg count
     ##       <int> <int>
-    ## 1      2004 10574
-    ## 2      2005 11148
-    ## 3      2006 11624
-    ## 4      2007 10420
-    ## 5      2008 15342
-    ## 6      2009 21201
-    ## 7      2010 27604
-    ## 8      2011 30251
-    ## 9      2012 28011
-    ## 10     2013 25015
-    ## 11     2014 21907
-    ## 12     2015 22470
+    ##  1     2004 10654
+    ##  2     2005 11196
+    ##  3     2006 11681
+    ##  4     2007 10534
+    ##  5     2008 15429
+    ##  6     2009 21299
+    ##  7     2010 27705
+    ##  8     2011 30424
+    ##  9     2012 28171
+    ## 10     2013 25256
+    ## 11     2014 22113
+    ## 12     2015 22719
+    ## 13     2016 26625
 
 License
 -------

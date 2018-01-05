@@ -23,7 +23,7 @@ This dataset contains all municipios which are part of a metro area as defined b
 \item{\code{mun_code}}{a numeric vector}
 }
 }
+
 \examples{
 head(metro.areas)
 }
-

@@ -1,7 +1,7 @@
 ---
-title: "Injury Intent Deaths 2004-2015 in Mexico"
+title: "Injury Intent Deaths 2004-2016 in Mexico"
 author: "Diego Valle-Jones"
-date: "November 30, 2016"
+date: "January 05, 2018"
 output: 
  github_document:
           toc: true
@@ -9,7 +9,7 @@ output:
           fig_height: 5
 ---
 
-Injury Intent Deaths 2004-2015 in Mexico
+Injury Intent Deaths 2004-2016 in Mexico
 ========================================================
 
 [![Travis-CI Build Status](https://travis-ci.org/diegovalle/mxmortalitydb.svg?branch=master)](https://travis-ci.org/diegovalle/mxmortalitydb)
@@ -22,7 +22,7 @@ Injury Intent Deaths 2004-2015 in Mexico
 
 ## What does it do?
 
-This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2015. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
+This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2016. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
 
 ## Installation
 

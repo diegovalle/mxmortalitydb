@@ -22,7 +22,7 @@ in the injury intent mortality database
 \item{\code{name}}{a character vector}
 }
 }
+
 \examples{
 head(geo.codes)
 }
-

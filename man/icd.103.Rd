@@ -21,7 +21,7 @@ variable icd_103
 \item{\code{icd_103_name}}{: a character vector}
 }
 }
+
 \examples{
 head(icd.103)
 }
-
