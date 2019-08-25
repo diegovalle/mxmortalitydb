@@ -3,8 +3,8 @@ Type: Package
 Title: Injury Intent Deaths 2004-2016 in Mexico
 Version: 2017.0
 Date: 2019-02-27
-Author: Diego Valle-Jones <diegovalle@gmail.com>
-Maintainer: Diego Valle-Jones <diegovalle@gmail.com>
+Author: Diego Valle-Jones <diego at diegovalle dot net>
+Maintainer: Diego Valle-Jones <diego at diegovalle dot net>
 Description: A data only package containing all injury intent deaths (accidents,
     suicides, homicides, legal interventions, and deaths of unspecified intent)
     registered by the SSA/INEGI from 2004 to 2016. See <http://www.inegi.org.mx/
