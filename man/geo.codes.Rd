@@ -4,7 +4,9 @@
 \name{geo.codes}
 \alias{geo.codes}
 \title{State and Municipio Codes}
-\format{A data frame with 2559 observations on the following 3 variables.}
+\format{
+A data frame with 2559 observations on the following 3 variables.
+}
 \usage{
 geo.codes
 }

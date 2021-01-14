@@ -4,7 +4,9 @@
 \name{metro.areas}
 \alias{metro.areas}
 \title{Mexican Metro Areas (2010)}
-\format{A data frame with 366 observations on the following 5 variables.}
+\format{
+A data frame with 366 observations on the following 5 variables.
+}
 \usage{
 metro.areas
 }

@@ -4,7 +4,9 @@
 \name{aggressor.relation.code}
 \alias{aggressor.relation.code}
 \title{Aggressor Relationship codes}
-\format{A data frame with 74 observations on the following 2 variables.}
+\format{
+A data frame with 74 observations on the following 2 variables.
+}
 \usage{
 aggressor.relation.code
 }

@@ -4,7 +4,9 @@
 \name{icd.103}
 \alias{icd.103}
 \title{List of 103 Diseases}
-\format{A data frame with 103 observations on the following 2 variables.}
+\format{
+A data frame with 103 observations on the following 2 variables.
+}
 \usage{
 icd.103
 }

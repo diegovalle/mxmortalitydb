@@ -4,7 +4,9 @@
 \name{injury.intent}
 \alias{injury.intent}
 \title{Mexican Injury Intent Mortality Data}
-\format{A data frame with 562,475 rows and 66 columns.}
+\format{
+A data frame with 562,475 rows and 66 columns.
+}
 \usage{
 injury.intent
 }

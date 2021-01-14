@@ -4,7 +4,9 @@
 \name{mex.list.group}
 \alias{mex.list.group}
 \title{Dicease Group corresponding to the Mexican Disease List}
-\format{A data frame with 59 observations on the following 2 variables.}
+\format{
+A data frame with 59 observations on the following 2 variables.
+}
 \usage{
 mex.list.group
 }

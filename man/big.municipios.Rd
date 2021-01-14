@@ -4,7 +4,9 @@
 \name{big.municipios}
 \alias{big.municipios}
 \title{Big Municipios not part of a Metro Area}
-\format{A data frame with 66 observations on the following 4 variables.}
+\format{
+A data frame with 66 observations on the following 4 variables.
+}
 \usage{
 big.municipios
 }

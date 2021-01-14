@@ -4,7 +4,9 @@
 \name{mex.list}
 \alias{mex.list}
 \title{Mexican Disease List}
-\format{A data frame with 417 observations on the following 2 variables.}
+\format{
+A data frame with 417 observations on the following 2 variables.
+}
 \usage{
 mex.list
 }
