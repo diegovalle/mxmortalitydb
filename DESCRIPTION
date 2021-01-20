@@ -12,7 +12,7 @@ Description: A data only package containing all injury intent deaths (accidents,
     original microdata.
 License: MIT + file LICENSE
 Depends:
-    R (>= 3.5.0)
+    R (>= 3.4.4)
 Suggests:
     knitr,
     rmarkdown,
