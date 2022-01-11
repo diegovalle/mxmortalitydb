@@ -13,9 +13,6 @@ February 28, 2019
 
 # Injury Intent Deaths 2004-2019 in Mexico
 
-[![Travis-CI Build
-Status](https://travis-ci.org/diegovalle/mxmortalitydb.svg?branch=master)](https://travis-ci.org/diegovalle/mxmortalitydb)
-
 |              |                                                 |
 |--------------|-------------------------------------------------|
 | **Author:**  | Diego Valle-Jones                               |
