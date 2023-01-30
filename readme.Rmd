@@ -1,5 +1,5 @@
 ---
-title: "Injury Intent Deaths 2004-2019 in Mexico"
+title: "Injury Intent Deaths 2004-`r library(mxmortalitydb); max(injury.intent$year_occur, na.rm = TRUE)` in Mexico"
 author: "Diego Valle-Jones"
 date: "February 28, 2019"
 output: 
@@ -9,7 +9,7 @@ output:
           fig_height: 5
 ---
 
-Injury Intent Deaths 2004-2019 in Mexico
+Injury Intent Deaths 2004-`r max(unique(injury.intent$year_occur), na.rm = TRUE)` in Mexico
 ========================================================
 
 |              |          |
@@ -20,7 +20,7 @@ Injury Intent Deaths 2004-2019 in Mexico
 
 ## What does it do?
 
-This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to 2019. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
+This is a data only package containing all injury intent deaths (accidents, suicides, homicides, legal interventions, and deaths of unspecified intent) registered by the SSA/INEGI from 2004 to `r max(injury.intent$year_occur, na.rm = TRUE)`. The data source for the database is the [INEGI](http://www.inegi.org.mx/est/contenidos/proyectos/registros/vitales/mortalidad/default.aspx). In addition the data was coded with the Injury Mortality Matrix provided by the [CDC](http://www.cdc.gov/nchs/data/ice/icd10_transcode.pdf). The code used to clean the database is available [as a separate program](https://github.com/diegovalle/death.index)
 
 ## Installation
 
