@@ -1,7 +1,7 @@
 ---
 title: "Injury Intent Deaths 2004-`r library(mxmortalitydb); max(injury.intent$year_occur, na.rm = TRUE)` in Mexico"
 author: "Diego Valle-Jones"
-date: "February 28, 2019"
+date: "January 05, 2024"
 output: 
  github_document:
           toc: true
