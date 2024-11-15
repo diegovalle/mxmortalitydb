@@ -19,9 +19,9 @@ in the injury intent mortality database
 
 
 \itemize{
-\item{\code{state_code}}{a numeric vector}
-\item{\code{mun_code}}{a numeric vector}
-\item{\code{name}}{a character vector}
+\item \code{state_code} a numeric vector
+\item \code{mun_code} a numeric vector
+\item \code{name} a character vector
 }
 }
 

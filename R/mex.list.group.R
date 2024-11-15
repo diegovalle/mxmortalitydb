@@ -7,8 +7,8 @@
 #' @section Variables:
 #'
 #' \itemize{
-#' \item{\code{mex_list_group}}{: a character vector}
-#' \item{\code{mex_list_group_name}}{: a character vector}
+#' \item \code{mex_list_group} : a character vector
+#' \item \code{mex_list_group_name} : a character vector
 #' }
 #' @docType data
 #' @name mex.list.group

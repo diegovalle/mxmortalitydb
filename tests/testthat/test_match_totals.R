@@ -4,7 +4,7 @@
 
 
 test_that("maximum age", {
-  expect_equal(max(injury.intent$age_years, na.rm = TRUE), 120)
+  expect_equal(max(mxmortalitydb::injury.intent$age_years, na.rm = TRUE), 120)
 })
 
 test_that("number of registered homicides", {
@@ -12,12 +12,12 @@ test_that("number of registered homicides", {
   homicides <- c(9330, 9926, 10454,
                  8868, 14007, 19804,
                  25757, 27213, 25967, 23063, 20013, 20763,24560,32082, 36687,36662,
-                 36773, 35700, 33291	)
+                 36773, 35700, 33291,32253	)
   
-  expect_equal((injury.intent %>% 
-                  filter(intent =="Homicide") %>%
-                  group_by(year_reg) %>% 
-                  summarise(count = n()))$count,
+  expect_equal((mxmortalitydb::injury.intent %>% 
+                  dplyr::filter(intent =="Homicide") %>%
+                  dplyr::group_by(year_reg) %>% 
+                  dplyr::summarise(count = dplyr::n()))$count,
                homicides )})
 
 
@@ -26,31 +26,31 @@ test_that("number of registered accidents", {
   accidents <- c(34880, 35865, 36282,
                  39343, 38880, 39461,
                  38120, 36694, 37729, 36295, 35817, 37190,37429,36220,34591,33525,
-                 32364, 34613, 37457)
-  expect_equal((injury.intent %>% 
-                  filter(intent =="Accident") %>%
-                  group_by(year_reg) %>% 
-                  summarise(count = n()))$count,
+                 32364, 34613, 37457, 40282)
+  expect_equal((mxmortalitydb::injury.intent %>% 
+                  dplyr::filter(intent =="Accident") %>%
+                  dplyr::group_by(year_reg) %>% 
+                  dplyr::summarise(count = dplyr::n()))$count,
                accidents )})
 
 
 test_that("number of registered suicides", {
   suicides <- c(4117, 4315, 4277, 4395, 4681, 5190, 5012, 5718, 5550, 5909,6337,
-                6425,6370,6559, 6808,7225, 7896, 8433, 8241)
-  expect_equal((injury.intent %>% 
-                  filter(intent =="Suicide") %>%
-                  group_by(year_reg) %>% 
-                  summarise(count = n()))$count,
+                6425,6370,6559, 6808,7225, 7896, 8433, 8241, 9072)
+  expect_equal((mxmortalitydb::injury.intent %>% 
+                  dplyr::filter(intent =="Suicide") %>%
+                  dplyr::group_by(year_reg) %>% 
+                  dplyr::summarise(count = dplyr::n()))$count,
                suicides )})
 
 test_that("number of registered deaths of unknown intent", {
   # 2014 - 4,335
   na <- c(2957, 2932, 2793, 2376, 2567, 2920, 3594, 5630, 4375,4198,4376, 4122,
-          4393,5427, 5567,6399,5580, 5898, 5919)
-  expect_equal((injury.intent %>% 
-                  filter(is.na(intent)) %>%
-                  group_by(year_reg) %>% 
-                  summarise(count = n()))$count,
+          4393,5427, 5567,6399,5580, 5898, 5919, 2482)
+  expect_equal((mxmortalitydb::injury.intent %>% 
+                  dplyr::filter(is.na(intent)) %>%
+                  dplyr::group_by(year_reg) %>% 
+                  dplyr::summarise(count = dplyr::n()))$count,
                na )})
 
 
@@ -74,10 +74,12 @@ test_that("number of registered deaths by Legal Intervention", {
           71,
           47,
           54,
-          35
+          35,
+          29
   )
-  expect_equal((injury.intent %>% 
-                  filter(intent == "Legal Intervention") %>%
-                  group_by(year_reg) %>% 
-                  summarise(count = n()))$count,
+  expect_equal((mxmortalitydb::injury.intent %>% 
+                  dplyr::filter(intent == "Legal Intervention") %>%
+                  dplyr::group_by(year_reg) %>% 
+                  dplyr::summarise(count = dplyr::n()))$count,
                mi )})
+

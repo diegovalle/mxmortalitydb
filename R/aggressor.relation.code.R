@@ -7,8 +7,8 @@
 #' @section Variables:
 #'
 #' \itemize{
-#' \item{\code{aggressor_relation_code}}{a numeric vector}
-#' \item{\code{relationship}}{a character vector}
+#' \item \code{aggressor_relation_code} a numeric vector
+#' \item \code{relationship} a character vector
 #' }
 #' @docType data
 #' @name aggressor.relation.code

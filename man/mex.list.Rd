@@ -18,8 +18,8 @@ This dataset contains a list of diseases to match with the injury mortality data
 
 
 \itemize{
-\item{\code{mex_list}}{: a character vector}
-\item{\code{mex_list_name}}{: a character vector}
+\item \code{mex_list} : a character vector
+\item \code{mex_list_name} : a character vector
 }
 }
 

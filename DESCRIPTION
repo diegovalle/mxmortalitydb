@@ -1,7 +1,7 @@
 Package: mxmortalitydb
 Type: Package
 Title: Injury Intent Deaths 2004-2018 in Mexico
-Version: 2022.0
+Version: 2023.0
 Date: 2024-01-04
 Author: Diego Valle-Jones <diego@nospam-diegovalle.net>
 Maintainer: Diego Valle-Jones <diego@nospam-diegovalle.net>
@@ -21,4 +21,5 @@ Suggests:
     dplyr
 LazyData: yes
 LazyDataCompression: xz
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
+Encoding: UTF-8

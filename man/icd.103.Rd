@@ -19,8 +19,8 @@ variable icd_103
 
 
 \itemize{
-\item{\code{icd_103}}{: a numeric vector}
-\item{\code{icd_103_name}}{: a character vector}
+\item \code{icd_103} : a numeric vector
+\item \code{icd_103_name} : a character vector
 }
 }
 

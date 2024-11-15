@@ -19,10 +19,10 @@ a larger population than the smallest metro area (> 110,000)
 
 
 \itemize{
-\item{\code{state_code}}{a numeric vector}
-\item{\code{mun_code}}{a numeric vector}
-\item{\code{population}}{a numeric vector}
-\item{\code{name}}{a character vector}
+\item \code{state_code} a numeric vector
+\item \code{mun_code} a numeric vector
+\item \code{population} a numeric vector
+\item \code{name} a character vector
 }
 }
 

@@ -19,8 +19,8 @@ variable mex_list_group
 
 
 \itemize{
-\item{\code{mex_list_group}}{: a character vector}
-\item{\code{mex_list_group_name}}{: a character vector}
+\item \code{mex_list_group} : a character vector
+\item \code{mex_list_group_name} : a character vector
 }
 }
 

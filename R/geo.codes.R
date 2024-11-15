@@ -7,9 +7,9 @@
 #' @section Variables:
 #'
 #' \itemize{
-#' \item{\code{state_code}}{a numeric vector}
-#' \item{\code{mun_code}}{a numeric vector}
-#' \item{\code{name}}{a character vector}
+#' \item \code{state_code} a numeric vector
+#' \item \code{mun_code} a numeric vector
+#' \item \code{name} a character vector
 #' }
 #' @docType data
 #' @name geo.codes

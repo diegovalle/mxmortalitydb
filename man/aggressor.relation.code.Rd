@@ -19,8 +19,8 @@ and their victim for the aggressor_relation_code column in the injury intent dat
 
 
 \itemize{
-\item{\code{aggressor_relation_code}}{a numeric vector}
-\item{\code{relationship}}{a character vector}
+\item \code{aggressor_relation_code} a numeric vector
+\item \code{relationship} a character vector
 }
 }
 
